@@ -19,4 +19,9 @@ Du hast die Möglichkeit, die bereitgestellte Datenbank nach deinen Wünschen an
 3. **Beginne mit den Übungsaufgaben** in der `sql_uebungsaufgaben.md`-Datei und nutze die `sql_uebungsaufgaben_lösungen.md`-Datei, um deine Antworten zu überprüfen.
 4. **Passe die Datenbank an** (optional), indem du ein Python-Skript oder ein Datenbank-Management-Tool verwendest, um die Daten und die Struktur der Datenbank nach deinen Bedürfnissen zu ändern.
 
+Weitere Informationen zu empfohlener Software findest du [hier](BEISPIELSOFTWARE.md).
+
 Viel Erfolg beim Üben und Vertiefen deiner SQL-Kenntnisse!
+
+
+

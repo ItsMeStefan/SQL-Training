@@ -6,9 +6,9 @@ In diesem Repository findest du eine SQLite-Datenbank, Übungsaufgaben und Lösu
 
 ## Inhalt
 - **unternehmensdatenbank.db:** Eine SQLite-Datenbank mit vorbefüllten Beispieldaten.
-- **[sql_uebungsaufgaben](sql_uebungsaufgaben.md):** Eine Sammlung von SQL-Übungsaufgaben, die auf der bereitgestellten Datenbank basieren.
-- **sql_uebungsaufgaben_lösungen.md:** Lösungen für die Übungsaufgaben mit detaillierten SQL-Abfragen.
-- **create_table.py:** Ein Python-Skript zum Erstellen und Modifizieren der Datenbanktabellen (falls zutreffend).
+- **[sql_uebungsaufgaben.md](sql_uebungsaufgaben.md):** Eine Sammlung von SQL-Übungsaufgaben, die auf der bereitgestellten Datenbank basieren.
+- **[sql_uebungsaufgaben_lösungen.md](sql_uebungsaufgaben_lösungen.md):** Lösungen für die Übungsaufgaben mit detaillierten SQL-Abfragen.
+- **create_table.py:** Ein Python-Skript zum Erstellen und Modifizieren der Datenbanktabellen (Optional).
 
 ## Anpassung und Erweiterung der Datenbank
 Du hast die Möglichkeit, die bereitgestellte Datenbank nach deinen Wünschen anzupassen und zu erweitern. Mit dem beiliegenden Python-Skript (falls zutreffend) kannst du die Struktur der Datenbanktabellen ändern, neue Tabellen hinzufügen oder bestehende Daten modifizieren. So kannst du spezifische Szenarien und Abfragen erstellen, um deine SQL-Fähigkeiten gezielt zu üben und zu verbessern.

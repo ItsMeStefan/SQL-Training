@@ -21,17 +21,6 @@ SELECT Name FROM Projekte;
 ```
 </details>
 
-<details>
-<summary>c. Finde alle Abteilungen und wie viele Mitarbeiter in jeder Abteilung arbeiten.</summary>
-
-```sql
-SELECT a.Name, COUNT(m.ID) AS AnzahlMitarbeiter 
-FROM Abteilungen a
-LEFT JOIN Mitarbeiter m ON a.ID = m.AbteilungsID
-GROUP BY a.ID;
-```
-</details>
-
 ### Übung 2: JOIN-Operationen
 
 <details>
@@ -77,6 +66,17 @@ SELECT p.Name, COUNT(mp.MitarbeiterID) AS AnzahlMitarbeiter
 FROM Mitarbeiter_Projekte mp
 JOIN Projekte p ON mp.ProjektID = p.ID
 GROUP BY p.ID;
+```
+</details>
+
+<details>
+<summary>c. Finde alle Abteilungen und wie viele Mitarbeiter in jeder Abteilung arbeiten.</summary>
+
+```sql
+SELECT a.Name, COUNT(m.ID) AS AnzahlMitarbeiter 
+FROM Abteilungen a
+LEFT JOIN Mitarbeiter m ON a.ID = m.AbteilungsID
+GROUP BY a.ID;
 ```
 </details>
 

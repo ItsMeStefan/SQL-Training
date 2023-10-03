@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="./datenbanken/unternehmensdatenbank.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser query" current="2"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="2295"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainAbteilungen"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Abteilungen" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="59"/><column index="2" value="123"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Mitarbeiter" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths/><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="1a">SELECT Name, Gehalt
+FROM Mitarbeiter</sql><sql name="1b">SELECT Name
+FROM Projekte</sql><sql name="1c">SELECT a.Name AS Abteilung, COUNT(m.Name) AS &quot;Anzahl Mitarbeiter&quot;
+FROM Mitarbeiter AS m
+JOIN Abteilungen AS a
+ON a.ID = m.AbteilungsID
+GROUP BY a.ID</sql><sql name="2a">SELECT m.Name, p.Titel AS Position, a.Name AS Abteilung
+FROM Mitarbeiter AS m
+JOIN Positionen as p ON m.PositionID = p.ID
+JOIN Abteilungen as a ON m.AbteilungsID = a.ID</sql><sql name="2b">SELECT m.Name, pr.Name AS Projekt
+FROM Mitarbeiter_Projekte mp
+JOIN Mitarbeiter m ON mp.MitarbeiterID = m.ID
+JOIN Projekte pr ON mp.ProjektID = pr.ID</sql><sql name="3a">SELECT a.Name, AVG(m.Gehalt) AS DurchschnittlichesGehalt
+FROM Mitarbeiter m
+JOIN Abteilungen a ON m.AbteilungsID = a.ID
+GROUP BY a.ID</sql><sql name="3b">SELECT p.Name, COUNT(mp.MitarbeiterID) AS AnzahlMitarbeiter
+FROM Mitarbeiter_Projekte mp
+JOIN Projekte p ON mp.ProjektID = p.ID
+GROUP BY p.ID</sql><sql name="4a">SELECT Name, Gehalt
+FROM Mitarbeiter
+WHERE Gehalt &gt; (SELECT AVG(Gehalt) FROM Mitarbeiter)</sql><sql name="4b">SELECT a.Name
+FROM Abteilungen a
+JOIN Mitarbeiter m ON a.ID = m.AbteilungsID
+GROUP BY a.ID
+ORDER BY COUNT(m.ID) DESC
+LIMIT 1</sql><sql name="5a">INSERT INTO Mitarbeiter (Name, PositionID, AbteilungsID, Gehalt)
+VALUES ('Neuer Mitarbeiter', 1, 1, 75000)</sql><sql name="5b">UPDATE Mitarbeiter
+SET Gehalt = Gehalt * 1.1
+WHERE AbteilungsID = (SELECT ID FROM Abteilungen WHERE Name = 'Entwicklung')</sql><current_tab id="10"/></tab_sql></sqlb_project>
